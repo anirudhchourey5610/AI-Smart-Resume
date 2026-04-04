@@ -25,6 +25,22 @@ function toastTone(type) {
   return type === "success" ? "success" : "error";
 }
 
+function extractServerMessage(data, fallback) {
+  if (typeof data === "string" && data.trim()) {
+    return data;
+  }
+
+  if (data && typeof data === "object") {
+    if (typeof data.message === "string" && data.message.trim()) {
+      return data.message;
+    }
+
+    return JSON.stringify(data);
+  }
+
+  return fallback;
+}
+
 const StepIndicator = memo(function StepIndicator({ currentStep, completedSteps }) {
   const steps = [
     { number: 1, label: "Upload Resume" },
@@ -347,7 +363,7 @@ function AiOptimizer() {
     setToast(null);
 
     try {
-      await axios.post(apiUrl("/api/job-applications/apply-optimized"), {
+      const response = await axios.post(apiUrl("/api/job-applications/apply-optimized"), {
         hrEmail: hrEmail.trim(),
         jobTitle: DEFAULT_SUBJECT,
         finalResumeText: optimizedText,
@@ -355,14 +371,22 @@ function AiOptimizer() {
 
       setToast({
         type: "success",
-        message: "Application sent successfully.",
+        message: extractServerMessage(
+          response.data,
+          "Application sent successfully."
+        ),
       });
       setIsEmailModalOpen(false);
       setHrEmail("");
-    } catch {
+    } catch (error) {
       setToast({
         type: "error",
-        message: "Email dispatch failed. Please try again.",
+        message: axios.isAxiosError(error)
+          ? extractServerMessage(
+              error.response?.data,
+              "Email dispatch failed. Please try again."
+            )
+          : "Email dispatch failed. Please try again.",
       });
     } finally {
       setSendingEmail(false);
