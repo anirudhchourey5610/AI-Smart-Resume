@@ -53,5 +53,7 @@ ResumeUpload.jsx: Handles multi-part file uploads to the Spring Boot file storag
 Login.jsx / Signup.jsx: User onboarding and security.
 
 🤝 Repositories
+
 Backend: smart-job-backend
+
 Frontend: AI-Smart-Resume
