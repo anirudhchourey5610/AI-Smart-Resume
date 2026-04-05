@@ -66,6 +66,7 @@ AI output is returned and can be edited before final use.
 📊 Dashboard Experience
 ⚠️ Real-time Error & Success Feedback
 🧭 Protected Navigation
+
 🛠️ Tech Stack
 React 18
 Vite
@@ -73,6 +74,7 @@ Tailwind CSS
 React Router DOM
 Axios
 Lucide React
+
 🚀 Getting Started
 1. Environment Variables
 VITE_API_BASE_URL=https://smart-job-backend-dtqd.onrender.com
@@ -83,6 +85,7 @@ npm run dev
 Connect GitHub repo to Vercel
 Add VITE_API_BASE_URL
 Push to main → auto deploy
+
 🧩 Project Structure
 src/
 ├── assets/
@@ -95,21 +98,25 @@ src/
 ├── utils/
 ├── App.jsx
 └── main.jsx
+
 🧠 State & API Handling
 Local state → forms, loading, UI feedback
 Context → authentication state
 Axios → API communication
 Centralized API config → clean endpoints
+
 📝 Form Handling & Validation
 Controlled inputs
 Prevent default form submission
 Client-side validation (e.g., password match)
 Backend errors displayed directly in UI
+
 ⚠️ Error Handling
 Inline form error messages
 Backend error surfacing
 Toast-style feedback for actions
 Disabled buttons during requests
+
 ⚙️ Performance Optimizations
 ⚡ Vite fast builds + HMR
 📦 Lazy loading (React.lazy)
@@ -120,6 +127,7 @@ Token-based protected routes
 Controlled inputs
 Environment-based API config
 Logout clears stored auth data
+
 🤝 Repositories
 Backend: smart-job-backend
 Frontend: AI-Smart-Resume
