@@ -65,9 +65,10 @@ function Register() {
       const data = await register(username, email, password);
       setSuccess(data.message || "Registration successful.");
       setTimeout(() => navigate("/"), 900);
-    } catch (submitError) {
-      console.error(submitError);
-      setError("Registration failed. Please try again.");
+    } catch (error) {
+      console.error(error);
+      console.log(error.response?.data);
+      setError(error.response?.data?.error || "Registration failed");
     } finally {
       setSubmitting(false);
     }
