@@ -1,4 +1,5 @@
 🎨 Smart Job Application & AI Resume Optimizer (Frontend)
+
 Welcome to the sleek, high-performing frontend for the AI Smart Resume platform! This React 18 application is built with Vite for maximum developer speed and Tailwind CSS for a stunning, responsive design.
 
 🏛️ Architecture (A to Z)
