@@ -24,7 +24,9 @@ Drafting: Real-time JSON editing for AI-optimized content.
 🔒 Secure Authentication: Login and Signup flow with session-aware headers.
 
 🛠️ Tech Stack
+
 React 18
+
 Vite (Next-gen build tool)
 
 Tailwind CSS (Utility-first CSS)
